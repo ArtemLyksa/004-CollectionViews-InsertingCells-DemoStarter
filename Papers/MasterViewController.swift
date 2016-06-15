@@ -69,6 +69,16 @@ class MasterViewController: UICollectionViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+
+    
+    //Actions
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        let indexPath = papersDataSource.indexPathForNewRandomPaper()
+        
+        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.0, options: .CurveEaseInOut, animations:{ () -> Void in
+            self.collectionView!.insertItemsAtIndexPaths([indexPath])
+            }, completion: nil)
+    }
     
   // MARK: UICollectionViewDataSource
   
